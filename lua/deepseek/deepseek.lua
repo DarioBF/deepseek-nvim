@@ -4,8 +4,8 @@ local M = {}
 
 -- Configuración por defecto
 local config = {
-	api_key = "",                                       -- Aquí deberías poner tu API key de DeepSeek Coder
-	api_url = "https://api.deepseek.com/v1/suggestions", -- URL de la API de DeepSeek
+	api_key = "",                                         -- Aquí deberías poner tu API key de DeepSeek Coder
+	api_url = "https://api.deepseek.com/beta/completions", -- URL de la API de DeepSeek
 }
 
 -- Función para configurar el plugin
@@ -16,9 +16,9 @@ end
 -- Función para hacer una solicitud a la API de DeepSeek
 local function get_suggestion(code)
 	local json_body = vim.fn.json_encode({
-		model = "deepseek-coder",     -- Nombre del modelo (verifica en la documentación de DeepSeek)
-		prompt = code,                -- El código o la entrada del usuario
-		max_tokens = 50,              -- Número máximo de tokens en la sugerencia
+		model = "deepseek-coder", -- Nombre del modelo (verifica en la documentación de DeepSeek)
+		prompt = code,          -- El código o la entrada del usuario
+		max_tokens = 50,        -- Número máximo de tokens en la sugerencia
 	})
 
 	local command = string.format(
