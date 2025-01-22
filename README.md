@@ -8,10 +8,10 @@ Using `packer.nvim`:
 
 ```lua
 use({
-    "tu_usuario/deepseek-nvim",
+    "dariobf/deepseek-nvim",
     config = function()
         require('deepseek').setup({
-            api_key = "tu_api_key_aqui",
+            api_key = "api_key_here",
         })
     end,
 })
